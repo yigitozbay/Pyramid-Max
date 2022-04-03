@@ -8,7 +8,7 @@ public class mpath {
 	public static int [][] pyramid; 
 	public static ArrayList list=new ArrayList();
 	
-	public static int maxSum(int x,int y) throws IOException{//sums the path
+	public static int maxSum(int x,int y) throws IOException{			//sums the path
 		if(x>=pyramid.length)
 			return 0;
 		int number=pyramid[x][y];
@@ -18,7 +18,7 @@ public class mpath {
 		else
 			return number+Math.max(maxSum(x+1,y),maxSum(x+1,y+1));
 	}
-	public static void textfile () throws IOException {//open txt file and adds into 2d array 
+	public static void textfile () throws IOException {					//open txt file and adds into 2d array 
 		int [][] txtFile=Files.lines(Paths.get("sample_input.txt")).map(s->stream(s.trim().split("\\s+"))
 				.mapToInt(Integer::parseInt).toArray()).toArray(int [][]::new);
 		pyramid=txtFile;
@@ -26,7 +26,7 @@ public class mpath {
 	}
 	
 	
-	public static boolean isPrime(int number) { //checks the number is prime or not 
+	public static boolean isPrime(int number) {					 //checks the number is prime or not 
 		for(int i=2;i<number;i++) {
 			if((number % i)==0) {
 				return false;
