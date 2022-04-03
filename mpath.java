@@ -18,7 +18,7 @@ public class mpath {
 		else
 			return number+Math.max(maxSum(x+1,y),maxSum(x+1,y+1));
 	}
-	public static void textfile () throws IOException {					//open txt file and adds into 2d array 
+	public static void textFile () throws IOException {					//open txt file and adds into 2d array 
 		int [][] txtFile=Files.lines(Paths.get("sample_input.txt")).map(s->stream(s.trim().split("\\s+"))
 				.mapToInt(Integer::parseInt).toArray()).toArray(int [][]::new);
 		pyramid=txtFile;
